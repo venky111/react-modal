@@ -11,18 +11,27 @@ function App() {
   };
 
   const onClose = () => {
-    console.log('this is called');
     setShowModal(false);
   };
   return (
     <>
       <button onClick={handleClick}>Click</button>
       {showModal && (
-        <Modal onClose={onClose}>
+        <Modal
+          onClose={onClose}
+          close={() => {
+            return <Button></Button>;
+          }}
+          title='Test Model'
+        >
           <label>Hello</label>
         </Modal>
       )}
     </>
   );
+
+  function Button() {
+    return <button>close</button>;
+  }
 }
 export default App;
