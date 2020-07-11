@@ -17,21 +17,19 @@ function App() {
     <>
       <button onClick={handleClick}>Click</button>
       {showModal && (
-        <Modal
-          onClose={onClose}
-          close={() => {
-            return <Button></Button>;
-          }}
-          title='Test Model'
-        >
+        <Modal onClose={onClose} closeButtonTitle='Test Model'>
           <label>Hello</label>
+          <input type='text'></input>
+          <button title='text'>Button</button>
+          <label>Hello</label>
+          <input type='text'></input>
+          <button title='text'>Button</button>
+          <label>Hello</label>
+          <input type='text'></input>
+          <button title='text'>Button</button>
         </Modal>
       )}
     </>
   );
-
-  function Button() {
-    return <button>close</button>;
-  }
 }
 export default App;
