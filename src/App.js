@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import './App.css';
 import Modal from './components/modal/Modal';
-import Toggle from './components/toggle/toggle';
+// import Toggle from './components/toggle/toggle';
 
 function App() {
   const [showModal, setShowModal] = useState(false);
@@ -11,23 +11,19 @@ function App() {
   //   setShowModal(true);
   // };
 
-  const onClose = () => {
-    return <Toggle><Button/></Toggle>
-  };
-  const { Button, On, Off } = Toggle;
+  // const { Button } = Toggle;
   return (
     <>
-    <Toggle>
+    {/* <Toggle>
       <Button/>
-      <On>
-        <Modal onClose={onClose}>
-          <label>Hello</label>
-        </Modal>
-      </On>
-      <Off>
-        <div>I'm Off</div>
-      </Off>
-    </Toggle>
+      <Toggle.On>
+      <Modal show={Toggle.On}>
+        {console.log(<Toggle.On/>)}
+        <label>Hello</label>
+      </Modal>
+      </Toggle.On>
+      
+    </Toggle> */}
     </>
   );
 }
