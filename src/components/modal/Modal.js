@@ -9,7 +9,7 @@ function Modal(props) {
       <div className='footer'>
         <button
           onClick={() => {
-            props.onClose();
+            return props.onClose;
           }}
         >
           Close
