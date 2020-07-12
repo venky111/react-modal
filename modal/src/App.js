@@ -16,19 +16,17 @@ function App() {
   return (
     <>
       <button onClick={handleClick}>Click</button>
-      {showModal && (
-        <Modal onClose={onClose} closeButtonTitle='Test Model'>
-          <label>Hello</label>
-          <input type='text'></input>
-          <button title='text'>Button</button>
-          <label>Hello</label>
-          <input type='text'></input>
-          <button title='text'>Button</button>
-          <label>Hello</label>
-          <input type='text'></input>
-          <button title='text'>Button</button>
-        </Modal>
-      )}
+      <Modal show={showModal} onClose={onClose} closeButtonTitle='Test Model'>
+        <label>Hello</label>
+        <input type='text'></input>
+        <button title='text'>Button</button>
+        <label>Hello</label>
+        <input type='text'></input>
+        <button title='text'>Button</button>
+        <label>Hello</label>
+        <input type='text'></input>
+        <button title='text'>Button</button>
+      </Modal>
     </>
   );
 }

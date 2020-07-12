@@ -21,6 +21,9 @@ let matches =
 function tabbable(el) {
   let regularTabbables = [];
   let orderedTabbables = [];
+  if (el === null) {
+    return null;
+  }
   let candidates = el.querySelectorAll(candidateSelector);
   let candidate;
   let candidateTabindex;

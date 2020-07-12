@@ -3,10 +3,11 @@ import { createPortal } from 'react-dom';
 import tabbable from './tabbable';
 import './Modal.css';
 
-function Modal(props) {
+function ModalContent(props) {
   Modal.modalTrigger = document.activeElement;
   useEffect(() => {
     const focusableElements = tabbable(document.getElementById('modal'));
+    if (focusableElements === null) return () => {};
     const firstFocusableElement = focusableElements[0];
     const lastFocusableElement =
       focusableElements[focusableElements.length - 1];
@@ -38,16 +39,21 @@ function Modal(props) {
   });
 
   return createPortal(
-    <aside id='modal' className='modal'>
+    <aside
+      tag='aside'
+      role='dialog'
+      tabIndex='-1'
+      aria-modal='true'
+      id='modal'
+      className='modal'
+    >
       <div className='header'>
         <div>
           <p>{props.closeButtonTitle}</p>
         </div>
         <button
           onClick={() => {
-            console.log(Modal.modalTrigger);
             props.onClose();
-            Modal.modalTrigger.focus();
           }}
           className='_modal-close'
         >
@@ -63,4 +69,4 @@ function Modal(props) {
   );
 }
 
-export default Modal;
+export default ModalContent;
