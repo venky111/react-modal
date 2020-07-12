@@ -1,0 +1,23 @@
+.modal {
+  width: 500px;
+  display: block;
+  background: white;
+  border: 1px solid #ccc;
+  box-shadow: -2rem 2rem 2rem rgba(0, 0, 0, 0.2);
+  position: fixed;
+  z-index: 1; /* Sit on top */
+}
+.modal .body {
+  padding: 1rem;
+}
+.modal .footer {
+  border-top: 1px solid #ccc;
+  background: #eee;
+  padding: 0.5rem 1rem;
+}
+.modal .footer button {
+  background: #76aff0;
+  border-radius: 5px;
+  padding: 0.5rem 1rem;
+  font-size: 0.8rem;
+}
