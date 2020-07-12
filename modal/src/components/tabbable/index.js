@@ -21,9 +21,7 @@ let matches =
 function tabbable(el) {
   let regularTabbables = [];
   let orderedTabbables = [];
-
   let candidates = el.querySelectorAll(candidateSelector);
-
   let candidate;
   let candidateTabindex;
   for (let i = 0; i < candidates.length; i++) {
@@ -57,11 +55,7 @@ tabbable.isTabbable = isTabbable;
 tabbable.isFocusable = isFocusable;
 
 function isNodeMatchingSelectorTabbable(node) {
-  if (
-    !isNodeMatchingSelectorFocusable(node) ||
-    isNonTabbableRadio(node) ||
-    getTabindex(node) < 0
-  ) {
+  if (!isNodeMatchingSelectorFocusable(node) || getTabindex(node) < 0) {
     return false;
   }
   return true;
@@ -100,8 +94,6 @@ function getTabindex(node) {
   if (!isNaN(tabindexAttr)) {
     return tabindexAttr;
   }
-  // Browsers do not return `tabIndex` correctly for contentEditable nodes;
-  // so if they don't have a tabindex attribute specifically set, assume it's 0.
   if (isContentEditable(node)) {
     return 0;
   }
@@ -126,38 +118,7 @@ function isHiddenInput(node) {
   return isInput(node) && node.type === 'hidden';
 }
 
-function isRadio(node) {
-  return isInput(node) && node.type === 'radio';
-}
-
-function isNonTabbableRadio(node) {
-  return isRadio(node) && !isTabbableRadio(node);
-}
-
-function getCheckedRadio(nodes) {
-  for (let i = 0; i < nodes.length; i++) {
-    if (nodes[i].checked) {
-      return nodes[i];
-    }
-  }
-}
-
-function isTabbableRadio(node) {
-  if (!node.name) {
-    return true;
-  }
-  // This won't account for the edge case where you have radio groups with the same
-  // in separate forms on the same page.
-  let radioSet = node.ownerDocument.querySelectorAll(
-    'input[type="radio"][name="' + node.name + '"]'
-  );
-  let checked = getCheckedRadio(radioSet);
-  return !checked || checked === node;
-}
-
 function isHidden(node) {
-  // offsetParent being null will allow detecting cases where an element is invisible or inside an invisible element,
-  // as long as the element does not use position: fixed. For them, their visibility has to be checked directly as well.
   return (
     node.offsetParent === null || getComputedStyle(node).visibility === 'hidden'
   );

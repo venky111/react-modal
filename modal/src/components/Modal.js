@@ -39,19 +39,25 @@ function Modal(props) {
 
   return createPortal(
     <aside id='modal' className='modal'>
-      <div className='header'>{props.title}</div>
-      <div className='body'> {props.children}</div>
-      <div className='footer'>
+      <div className='header'>
+        <div>
+          <p>{props.closeButtonTitle}</p>
+        </div>
         <button
           onClick={() => {
-            Modal.modalTrigger.focus();
+            console.log(Modal.modalTrigger);
             props.onClose();
+            Modal.modalTrigger.focus();
           }}
-          title={props.closeButtonTitle}
+          className='_modal-close'
         >
-          {props.closeButtonTitle}
+          <span className='_hide-visual'>Close</span>
+          <svg className='_modal-close-icon' viewBox='0 0 40 40'>
+            <path d='M 10,10 L 30,30 M 30,10 L 10,30' />
+          </svg>
         </button>
       </div>
+      <div className='body'> {props.children}</div>
     </aside>,
     document.body
   );
