@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import './App.css';
-import Modal from './components/Modal';
+import Modal from './components/ModalContent';
 
 function App() {
   const [showModal, setShowModal] = useState(false);
