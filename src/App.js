@@ -1,29 +1,33 @@
-import React, { useState } from 'react';
+import React from 'react';
 import './App.css';
 import Modal from './components/modal/Modal';
-// import Toggle from './components/toggle/toggle';
 
 function App() {
-  const [showModal, setShowModal] = useState(false);
+  const onLogin = () => {
+    console.log('login clicked');
+  };
 
-  // const handleClick = (e) => {
-  //   e.preventDefault();
-  //   setShowModal(true);
-  // };
-
-  // const { Button } = Toggle;
+  const onSignUp = () => {
+    console.log('signUp clicked');
+  };
   return (
     <>
-    {/* <Toggle>
-      <Button/>
-      <Toggle.On>
-      <Modal show={Toggle.On}>
-        {console.log(<Toggle.On/>)}
+      <Modal modalProps={{ title: 'Login' }} onClose={onLogin}>
         <label>Hello</label>
+        <button>TestButton</button>
+        <label>Hello</label>
+        <button>TestButton</button>
+        <label>Hello</label>
+        <button>TestButton</button>
       </Modal>
-      </Toggle.On>
-      
-    </Toggle> */}
+      <Modal modalProps={{ title: 'SignUp' }} onClose={onSignUp}>
+        <label>Hello</label>
+        <button>TestButton</button>
+        <label>Hello</label>
+        <button>TestButton</button>
+        <label>Hello</label>
+        <button>TestButton</button>
+      </Modal>
     </>
   );
 }

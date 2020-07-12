@@ -1,15 +1,15 @@
 import React from 'react';
 
-function Button() {
-    return (
-        <button
-          ref={this.props.buttonRef}
-          onClick={this.props.showModal}
-          className="modal-button"
-        >
-          {this.props.triggerText}
-        </button>
-      );
+function Button(props) {
+  return (
+    <button
+      ref={props.buttonRef}
+      onClick={props.showModal}
+      className='modal-button'
+    >
+      {props.triggerText}
+    </button>
+  );
 }
 
 export default Button;
