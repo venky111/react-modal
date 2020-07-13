@@ -1,33 +1,16 @@
 import React from 'react';
 import './App.css';
-import Modal from './components/modal/Modal';
+import { Router } from '@reach/router';
+import Dashboard from './components/dashboard/Dashboard';
+import Main from './components/main/Main';
 
 function App() {
-  const onLogin = () => {
-    console.log('login clicked');
-  };
-
-  const onSignUp = () => {
-    console.log('signUp clicked');
-  };
   return (
     <>
-      <Modal modalProps={{ title: 'Login' }} onClose={onLogin}>
-        <label>Hello</label>
-        <button>TestButton</button>
-        <label>Hello</label>
-        <button>TestButton</button>
-        <label>Hello</label>
-        <button>TestButton</button>
-      </Modal>
-      <Modal modalProps={{ title: 'SignUp' }} onClose={onSignUp}>
-        <label>Hello</label>
-        <button>TestButton</button>
-        <label>Hello</label>
-        <button>TestButton</button>
-        <label>Hello</label>
-        <button>TestButton</button>
-      </Modal>
+      <Router>
+        <Main path='/' />
+        <Dashboard path='dashboard' />
+      </Router>
     </>
   );
 }
