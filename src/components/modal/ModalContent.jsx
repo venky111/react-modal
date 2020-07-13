@@ -18,6 +18,7 @@ function ModalContent(props) {
           onClick={() => {
             props.closeModal();
           }}
+          data-testid='modalClose'
           ref={props.buttonRef}
           className='_modal-close'
         >
