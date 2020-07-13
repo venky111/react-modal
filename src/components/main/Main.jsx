@@ -1,9 +1,9 @@
 import React from 'react';
 import Modal from '../modal/Modal';
-import SignUpForm from './SignUpForm';
-import LoginForm from './LoginForm';
+import SignUpForm from '../signupForm/SignUpForm';
+import LoginForm from '../loginForm/LoginForm';
 
-export const Main = () => {
+const Main = () => {
   const onLogin = () => {
     console.log('login clicked');
   };
@@ -14,11 +14,13 @@ export const Main = () => {
   return (
     <>
       <Modal modalProps={{ title: 'Login' }} onClose={onLogin}>
-        <LoginForm></LoginForm>
+        <LoginForm/>
       </Modal>
       <Modal modalProps={{ title: 'SignUp' }} onClose={onSignUp}>
-        <SignUpForm></SignUpForm>
+        <SignUpForm/>
       </Modal>
     </>
   );
 };
+
+export default Main;

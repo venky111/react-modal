@@ -1,9 +1,11 @@
 import React from 'react';
 
-export const Dashboard = (props) => {
+const Dashboard = () => {
   return (
     <>
       <h1>Welcome to Modal Tutorial</h1>
     </>
   );
 };
+
+export default Dashboard;

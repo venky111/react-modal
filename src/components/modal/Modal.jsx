@@ -49,6 +49,7 @@ class Modal extends React.Component {
           showModal={this.showModal}
           buttonRef={(n) => (this.TriggerButton = n)}
           triggerText={this.props.modalProps.title}
+          className='custom-button'
         />
         {this.state.show ? (
           <ModalContent

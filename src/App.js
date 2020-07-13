@@ -1,8 +1,8 @@
 import React from 'react';
 import './App.css';
 import { Router } from '@reach/router';
-import { Dashboard } from './components/forms/Dashboard';
-import { Main } from './components/forms/Main';
+import Dashboard from './components/dashboard/Dashboard';
+import Main from './components/main/Main';
 
 function App() {
   return (

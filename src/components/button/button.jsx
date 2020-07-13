@@ -1,11 +1,12 @@
 import React from 'react';
+import '../custom-button/custom-buttom.styles.scss';
 
 function Button(props) {
   return (
     <button
       ref={props.buttonRef}
       onClick={props.showModal}
-      className='modal-button'
+      className='custom-button'
     >
       {props.triggerText}
     </button>
