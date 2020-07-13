@@ -12,14 +12,14 @@ const Main = () => {
     console.log('signUp clicked');
   };
   return (
-    <>
-      <Modal modalProps={{ title: 'Login' }} onClose={onLogin}>
-        <LoginForm/>
+    <div className='Main'>
+      <Modal buttonTitle='Login' onClose={onLogin}>
+        <LoginForm />
       </Modal>
-      <Modal modalProps={{ title: 'SignUp' }} onClose={onSignUp}>
-        <SignUpForm/>
+      <Modal buttonTitle='SignUp' closeOnEsc={false} onClose={onSignUp}>
+        <SignUpForm />
       </Modal>
-    </>
+    </div>
   );
 };
 
