@@ -1,5 +1,5 @@
 # React Modal App
-This is a simple example application where we have created a modal library and used it to show 2 different: Login and Sign Up form in form of Modals.
+This is a simple example application where we have created a modal library and used it to show 2 different components: Login and Sign Up in form of Modals.
 
 ## How To Use the Modal?
 
