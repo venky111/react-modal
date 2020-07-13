@@ -27,7 +27,8 @@ class Modal extends React.Component {
     const lastFocusableElement =
       focusableElements[focusableElements.length - 1];
     if (e.keyCode === 27) {
-      this.closeModal();
+      if (this.props.closeOnEsc !== undefined && this.props.closeOnEsc === true)
+        this.closeModal();
     }
     if (e.keyCode === 9 || e.key === 'Tab') {
       if (e.shiftKey && document.activeElement === firstFocusableElement) {
@@ -48,7 +49,7 @@ class Modal extends React.Component {
         <Button
           showModal={this.showModal}
           buttonRef={(n) => (this.TriggerButton = n)}
-          triggerText={this.props.modalProps.title}
+          triggerText={this.props.buttonTitle}
           className='custom-button'
         />
         {this.state.show ? (
@@ -66,5 +67,11 @@ class Modal extends React.Component {
     );
   }
 }
+
+Modal.defaultProps = {
+  onClose: () => {},
+  closeOnEsc: true,
+  buttonTitle: 'Submit',
+};
 
 export default Modal;
