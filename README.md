@@ -1,68 +1,26 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# React Modal App
+This is a simple example application where we have created a modal library and used it to show 2 different: Login and Sign Up form in form of Modals.
 
-## Available Scripts
+## How To Use the Modal?
 
-In the project directory, you can run:
+The Modal component can be imported as a module in the application with:
+`import Modal from './Modal';`
 
-### `yarn start`
+### Example 1.
+`<Modal buttonTitle='Login' onClose={onLogin}>`<br />
+  `<LoginForm />`<br />
+`</Modal>`<br />
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+### Example 2.
+`<Modal buttonTitle='SignUp' closeOnEsc={false} onClose={onSignUp}>`<br />
+  `<SignUpForm />`<br />
+`</Modal>`<br />
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+## What props can it take?
+The Modal component accepts several props
 
-### `yarn test`
+`show` accepts a **boolean** (true/false), default value is false, controls when to show the modal and when to hide it.<br />
+`onClose` accepts a **function** (call back), default value is an empty call back function, controls how to close the modal and the next action after the modal is closed.<br />
+`closeOnEsc` accepts a **boolean**, default value is set to true, closes the Modal component on pressing the escape key.<br />
+`buttonTitle` accepts a **string**, default value is 'Submit', controls what text to show on the Modal triggering button.<br />
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `yarn build`
-
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `yarn eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `yarn build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
