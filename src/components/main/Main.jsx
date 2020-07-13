@@ -12,14 +12,14 @@ const Main = () => {
     console.log('signUp clicked');
   };
   return (
-    <div className='Main'>
+    <>
       <Modal buttonTitle='Login' onClose={onLogin}>
         <LoginForm />
       </Modal>
       <Modal buttonTitle='SignUp' closeOnEsc={false} onClose={onSignUp}>
         <SignUpForm />
       </Modal>
-    </div>
+    </>
   );
 };
 
